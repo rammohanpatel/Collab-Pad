@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 
-/* @import "@liveblocks/react-ui/styles.css"; */
-/* @import "@liveblocks/react-lexical/styles.css"; */
+@import "@liveblocks/react-ui/styles.css";
+@import "@liveblocks/react-lexical/styles.css";
 
 @import "../styles/dark-theme.css";
 
@@ -43,6 +43,15 @@
   .text-10-regular {
     @apply text-[10px] font-normal;
   }
+
+  .bg-dark-200 {
+    background-color: #333333; /* Replace with your desired value */
+  }
+
+  .border-dark-400 {
+    border-color: #4a5568; /* A dark shade of gray */
+}
+
 
   .gradient-blue {
     @apply bg-gradient-to-t from-blue-500 to-blue-400;
