@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const parseStringify = (value: any) => JSON.parse(JSON.stringify(value));
+export const parseStringify = <T>(value: T): T => JSON.parse(JSON.stringify(value));
 
 export const getAccessType = (userType: UserType) => {
   switch (userType) {
@@ -45,13 +45,13 @@ export const dateConverter = (timestamp: string): string => {
   }
 };
 
-// Function to generate a random color in hex format, excluding specified colors
+// Function to  a random color in hex format, excluding specified colors
 export function getRandomColor() {
   const avoidColors = ['#000000', '#FFFFFF', '#8B4513']; // Black, White, Brown in hex format
 
   let randomColor;
   do {
-    // Generate random RGB values
+    //  random RGB values
     const r = Math.floor(Math.random() * 256); // Random number between 0-255
     const g = Math.floor(Math.random() * 256);
     const b = Math.floor(Math.random() * 256);
