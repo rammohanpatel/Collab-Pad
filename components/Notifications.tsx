@@ -30,7 +30,7 @@ const Notifications = () => {
                 <div className="absolute right-2 top-2 z-20 size-2 rounded-full bg-red-500"></div>
             )}
         </PopoverTrigger>
-        <PopoverContent align='end' className='w-[25rem] '>
+        <PopoverContent align='end' className='w-[25rem] p-1 rounded-full '>
             <LiveblocksUIConfig 
                overrides={{
                 INBOX_NOTIFICATION_TEXT_MENTION : (user:ReactNode)=>(
@@ -38,13 +38,13 @@ const Notifications = () => {
                 )
                }}
             >
-                <InboxNotificationList>
+                <InboxNotificationList className='bg-slate-950 rounded-full'>
                     {unreadNotifications.length <=0 && (<p>No new notifications</p>)}
                     {unreadNotifications.length>0 && unreadNotifications.map((notification)=>(
                         <InboxNotification
                             key={notification.id}
                             inboxNotification={notification}
-                            className='bg-dark-200 text-white'
+                            className=' text-white'
                             href={`/documents/${notification.roomId}`}
                             showActions={false}
                             kinds={{
@@ -62,6 +62,7 @@ const Notifications = () => {
                                 $documentAccess: (props)=>(
                                     <InboxNotification.Custom {...props}
                                      title={props.inboxNotification.activities[0].data.title}
+                                     className='bg-transparent text-white'
                                      aside={<InboxNotification.Icon className='bg-transparent'>
                                         <Image 
                                           src={props.inboxNotification.activities[0].data.avatar as string || ''}

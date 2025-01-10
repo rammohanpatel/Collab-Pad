@@ -269,6 +269,7 @@
 
 .lb-inbox-notification-list-item:where(:not(:last-of-type)) {
   border-bottom: none;
+  
 }
 
 .lb-comment-body,
